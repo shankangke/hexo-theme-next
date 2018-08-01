@@ -951,3 +951,7 @@ vendors:
 css: css
 js: js
 images: images
+
+# Passage End Tag
+passage_end_tag:
+  enable: true
