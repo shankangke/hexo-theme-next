@@ -343,11 +343,11 @@
       {% endif  %}
     </div>
 
-    <div>
-      {% if not is_index %}
+    {% if is_post %}
+      <div>
         {% include 'passage-end-tag.swig' %}
-      {% endif %}
-    </div>
+      </div>
+    {% endif %}
 
     {% if theme.related_posts.enable and (theme.related_posts.display_in_home or not is_index) %}
       {% include 'post-related.swig' with { post: post } %}
