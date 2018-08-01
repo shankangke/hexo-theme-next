@@ -343,12 +343,6 @@
       {% endif  %}
     </div>
 
-    {% if is_post %}
-      <div>
-        {% include 'passage-end-tag.swig' %}
-      </div>
-    {% endif %}
-
     {% if theme.related_posts.enable and (theme.related_posts.display_in_home or not is_index) %}
       {% include 'post-related.swig' with { post: post } %}
     {% endif %}
@@ -374,7 +368,11 @@
         {% include 'post-copyright.swig' with { post: post } %}
       </div>
     {% endif %}
-
+    {% if not is_index %}
+      <div>
+        {% include 'passage-end-tag.swig' %}
+      </div>
+    {% endif %}
     <footer class="post-footer">
       {% if post.tags and post.tags.length and not is_index %}
         <div class="post-tags">
